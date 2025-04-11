@@ -3,6 +3,10 @@ augroup JavaClassTemplate
   autocmd BufNewFile *.java call JavaClassTemplate()
 augroup END
 
+if !exists("g:JavaClassTemplateBaseTestClasses")
+    let g:JavaClassTemplateBaseTestClasses = {}
+endif
+
 let s:pluginHome = expand("<sfile>:p:h:h")
 let s:loadScript = 1
 

@@ -24,7 +24,7 @@ class Buffer:
 
 current = Buffer()
 
-properties = { "has('win32')" : "0", "getcwd()" : "/path/to/your/project", "cursor" : (1, 0) }
+properties = { "g:JavaClassTemplateBaseTestClasses" : {}, "has('win32')" : "0", "getcwd()" : "/path/to/your/project", "cursor" : (1, 0) }
 
 def eval(arg):
     if arg in properties:
@@ -39,3 +39,9 @@ def set_cwd(path, relative_name):
 
 def set_win32(enable):
     properties["has('win32')"] = "1" if enable else "0"
+
+def set_base_test_classes(module, class_name):
+    properties["g:JavaClassTemplateBaseTestClasses"][module] = class_name
+
+def clear_base_test_classes():
+    properties["g:JavaClassTemplateBaseTestClasses"] = {}
