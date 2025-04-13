@@ -2,8 +2,6 @@ import os
 import pathlib
 import vim 
 
-#TODO - determine base class for test classes
-
 def jct_get_base_test_class_name(module_name, package_name):
     classes = vim.eval("g:JavaClassTemplateBaseTestClasses")
     base_class_name = ""
